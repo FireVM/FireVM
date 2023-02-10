@@ -1,0 +1,5 @@
+type RGB = [number, number, number]
+type RGBA = [number, number,number,number]
+type HSV = [number, number, number,]
+type HSL = [number, number, number,]
+type HSLA= [number, number, number,number]
