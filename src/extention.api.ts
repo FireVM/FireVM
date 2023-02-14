@@ -5,10 +5,10 @@ type Description = string
 
 class Metadata {
     public version: Verion
-    public data:Date
+    public data:number
     public id:Id
     public description:Description
-    constructor(version:Verion,data:Date,id:Id,description:Description){
+    constructor(version:Verion,data:number,id:Id,description:Description){
         this.version = version
         this.data = data
         this.id = id
@@ -19,7 +19,7 @@ interface Extensioninterface {
     getMetaData():Metadata
     getTimeLoaded():number
 }
-class Extension {
+class Extension implements Extensioninterface{
     private TimeLoad:number
     private metaData:Metadata
     constructor(metaData:Metadata){
@@ -33,5 +33,11 @@ class Extension {
         return this.TimeLoad
     }
 }
-const metaData = new Metadata("rc.1.0",new Date(),"com.example.extension","This is a example extension")
-const extension = new Extension(metaData)
+
+const extension = new Extension(
+    new Metadata("dbg.1.0",
+    Date.now(),
+    "com.example.extension",
+    "This is a example extension"
+    )
+)
