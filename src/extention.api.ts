@@ -20,17 +20,20 @@ interface Extensioninterface {
     getTimeLoaded():number
 }
 class Extension implements Extensioninterface{
-    private TimeLoad:number
-    private metaData:Metadata
+    private _TimeLoad:number
+    private _metaData:Metadata
     constructor(metaData:Metadata){
-        this.metaData = metaData
-        this.TimeLoad = Date.now()
+        this._metaData = metaData
+        this._TimeLoad = Date.now()
     }
     getMetaData():Metadata{
-        return this.metaData
+        return this._metaData
     }
     getTimeLoaded():number{
-        return this.TimeLoad
+        return this._TimeLoad
+    }
+    log(msg:any){
+        console.log(`ext:${this._metaData.id} msg:${msg}`)
     }
 }
 

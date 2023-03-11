@@ -1,2 +1,1 @@
-window.navigator.vibrate(200);
-window.navigator.vibrate([2000]);
+Bun.unsafe.gcAggressionLevel(1)
